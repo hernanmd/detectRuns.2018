@@ -1,17 +1,25 @@
-# detectRuns.2018
+[![license-badge](https://img.shields.io/badge/license-MIT-blue.svg)](https://img.shields.io/badge/license-MIT-blue.svg)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
+
+# Introduction
 
 ROH Detection Workflow with detectRUNS R package
 
 # Installation
 
-  - Download and install GitBash
-    - (Optional) PLINK
+  - Download and install [GitBash](http://www.techoism.com/how-to-install-git-bash-on-windows/)
+    - (Optional) [PLINK](https://www.youtube.com/watch?v=I62fp9HB0kg&feature=youtu.be)
   - Open a GitBash console.
   - cd to your working directory (example: my_working_dir): ```cd /c/Users/MyUsername/Documents/my_working_dir```
-  - ```git clone https://github.com/hernanmd/cgaTOH.2018.git; cd cgaTOH.2018/src```
+  - ```git clone https://github.com/hernanmd/detectRuns.2018.git; cd detectRuns.2018/src```
   - Put your .PED/.MAP or multiple .PED/.MAP files into the new directory
-    - (Optional) If your PED/MAP has many chromosomes: PLINK can split using the --chr parameter: ```for c in $(seq 1 29); do plink --file my_input --out 
-my_input_chr$c --chr $c --recode tab --cow; done```
+    - (Optional) If your PED/MAP has many chromosomes and you want to analyze separately: PLINK can split using the --chr parameter: ```for c in $(seq 1 29); do 
+plink --file my_input --out my_input_chr$c --chr $c --recode tab --cow; done```
+
+# Description
+
+See the [detectRUNS tutorial](https://cran.r-project.org/web/packages/detectRUNS/vignettes/detectRUNS.vignette.html) for documentation.
 
 # Input files
 
@@ -19,7 +27,8 @@ my_input_chr$c --chr $c --recode tab --cow; done```
 
 # Usage
 
-From command line:
+  - Open the script from any text editor.
+  - Execute from R-Studio or from command line:
 
 ```R
 Rscript run_detectRuns.R
