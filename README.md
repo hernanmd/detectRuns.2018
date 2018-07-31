@@ -29,11 +29,17 @@ See the [detectRUNS tutorial](https://cran.r-project.org/web/packages/detectRUNS
 
 # Usage
 
-  - Open the script from any text editor.
+  - Edit input_params.R with any text editor.
   - Execute from R-Studio or from command line:
 
+Consecutive Runs of homozygosity (Marras et al. 2015, Animal Genetics 46(2):110-121)
 ```R
-Rscript run_detectRuns.R
+Rscript run_dR_cr_ROHom.R
+```
+
+Consecutive Runs of heterozygosity (Marras et al. 2015, Animal Genetics 46(2):110-121)
+```R
+Rscript run_dR_cr_ROHet.R
 ```
 
 # License
