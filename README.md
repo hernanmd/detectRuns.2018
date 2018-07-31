@@ -23,7 +23,9 @@ See the [detectRUNS tutorial](https://cran.r-project.org/web/packages/detectRUNS
 
 # Input files
 
-  - (Optional) Check your .PED file is separated by spaces: ```tr '\t' ' ' < pedmaps/my_ped_tab.ped > pedmaps/my_ped_spaced.ped```
+  - (Optional) Check your .PED file is separated by spaces. Two ways of delimit a PED file to spaces:
+    - ```tr '\t' ' ' < pedmaps/my_ped_tab.ped > pedmaps/my_ped_spaced.ped```
+	- ```plink2 --file my_input --out my_input.out --cow --recode spacex --chr 1-29```
 
 # Usage
 

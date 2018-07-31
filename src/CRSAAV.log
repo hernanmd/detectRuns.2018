@@ -1,0 +1,30 @@
+PLINK v1.90b6.3 64-bit (17 Jul 2018)
+Options in effect:
+  --chr 1-29
+  --cow
+  --file CRSAAV
+  --out CRSAAV.out
+  --recode spacex
+
+Hostname: DESKTOP-GK6O7O7
+Working directory: c:\Hernan\detectRuns.2018
+Start time: Tue Jul 31 11:38:23 2018
+
+Random number seed: 1533047903
+3769 MB RAM detected; reserving 1884 MB for main workspace.
+Scanning .ped file... done.
+Performing single-pass .bed write (630957 variants, 10 cattle).
+--file: CRSAAV.out-temporary.bed + CRSAAV.out-temporary.bim +
+CRSAAV.out-temporary.fam written.
+630957 variants loaded from .bim file.
+10 cattle (0 males, 0 females, 10 ambiguous) loaded from .fam.
+Ambiguous sex IDs written to CRSAAV.out.nosex .
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 10 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.988889.
+630957 variants and 10 cattle pass filters and QC.
+Note: No phenotypes present.
+--recode ped to CRSAAV.out.ped + CRSAAV.out.map ... done.
+
+End time: Tue Jul 31 11:38:25 2018
