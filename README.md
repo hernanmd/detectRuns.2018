@@ -25,7 +25,7 @@ See the [detectRUNS tutorial](https://cran.r-project.org/web/packages/detectRUNS
 
   - (Optional) Check your .PED file is separated by spaces. Two ways of delimit a PED file to spaces:
     - ```tr '\t' ' ' < pedmaps/my_ped_tab.ped > pedmaps/my_ped_spaced.ped```
-	- ```plink2 --file my_input --out my_input.out --cow --recode spacex --chr 1-29```
+	- ```plink --file my_input --out my_input.out --cow --recode spacex --chr 1-29```
 
 # Usage
 
@@ -41,6 +41,14 @@ Consecutive Runs of heterozygosity (Marras et al. 2015, Animal Genetics 46(2):11
 ```R
 Rscript run_dR_cr_ROHet.R
 ```
+# Changes
+
+## Version 1.2
+
+  - Use output directory specified in input_params.R
+  - setwd to the directory where the script resides.
+  - Write tableRuns output to TSV file.
+  - Log console output to file.
 
 # License
 
