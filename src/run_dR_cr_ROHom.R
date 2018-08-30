@@ -29,9 +29,9 @@ setwd(cwd)
 # setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 # Remove existing and create new output directory
 if (file.exists(outDirROHom)){
-  unlink (outDirROHom, recursive=TRUE) 
-  } else {
-  dir.create(file.path(outDirROHom), showWarnings = FALSE)
+	unlink (outDirROHom, recursive=TRUE) 
+	} else {
+	dir.create(file.path(outDirROHom), showWarnings = FALSE)
   }
 
 ## Capture messages and errors to a file.
@@ -45,93 +45,103 @@ sink(logFile, type = "message")
 #################################################################
 
 consecutiveRuns <- consecutiveRUNS.run(
-  genotypeFile = genotypeFilePath,
-  mapFile = mapFilePath,
-  minSNP = minSNPParam,
-  ROHet = FALSE,
-  maxGap = 10^6,
-  minLengthBps = minLengthBpsParam,
-  maxOppRun = maxOppRun,
-  maxMissRun = maxMissRun
+	genotypeFile = genotypeFilePath,
+	mapFile = mapFilePath,
+	minSNP = minSNPParam,
+	ROHet = FALSE,
+	maxGap = 10^6,
+	minLengthBps = minLengthBpsParam,
+	maxOppRun = maxOppRun,
+	maxMissRun = maxMissRun
 )
 
 if (nrow(consecutiveRuns) == 0) {
-  ## reset message sink and close the file connection
-  stopLogMsg <- "No consecutive RUNS found for ROHom"
-  message(stopLogMsg)
-  sink(type="message")
-  close(logFile)    
-  stop(stopLogMsg)
+	## reset message sink and close the file connection
+	stopLogMsg <- "No consecutive RUNS found for ROHom"
+	message(stopLogMsg)
+	sink(type="message")
+	close(logFile)		
+	stop(stopLogMsg)
 }
 
 # The function summaryRuns() takes in input the dataframe with results from runs detection and calculates a number of basic descriptive statistics on runs. Additional necessary parameters are the paths to the Plink ped and map files. Class and snpInRuns are optional arguments.
 summaryList <- summaryRuns(
-  runs = consecutiveRuns, 
-  mapFile = mapFilePath, 
-  genotypeFile = genotypeFilePath, 
-  Class = summaryClass, 
-  snpInRuns = TRUE)
-  
+	runs = consecutiveRuns, 
+	mapFile = mapFilePath, 
+	genotypeFile = genotypeFilePath, 
+	Class = summaryClass, 
+	snpInRuns = TRUE)
+	
 # Write this in a better shape
 write.table(
-  x = summaryList$summary_ROH_count_chr, 
-  file = summary_ROH_count_chr_Filename, 
-  quote = F, 
-  sep = delim) 
+	x = summaryList$summary_ROH_count_chr, 
+	file = summary_ROH_count_chr_Filename, 
+	quote = F,
+	row.names = FALSE,
+	sep = delim) 
  
 write.table(
-  x = summaryList$summary_ROH_count, 
-  file = summary_ROH_count_Filename, 
-  quote = F, 
-  sep = delim)
+	x = summaryList$summary_ROH_count, 
+	file = summary_ROH_count_Filename, 
+	quote = F,
+	row.names = FALSE,
+	sep = delim)
   
 write.table(
-  x = summaryList$summary_ROH_percentage_chr, 
-  file = summary_ROH_percentage_chr_Filename, 
-  quote = F, 
-  sep = delim)
+	x = summaryList$summary_ROH_percentage_chr, 
+	file = summary_ROH_percentage_chr_Filename, 
+	quote = F, 
+	row.names = FALSE,
+	sep = delim)
   
 write.table(
-  x = summaryList$summary_ROH_percentage, 
-  file = summary_ROH_percentage_Filename, 
-  quote = F, 
-  sep = delim)
+	x = summaryList$summary_ROH_percentage, 
+	file = summary_ROH_percentage_Filename, 
+	row.names = FALSE,
+	quote = F, 
+	sep = delim)
 
 write.table(
-  x = summaryList$summary_ROH_mean_chr, 
-  file = summary_ROH_mean_chr_Filename, 
-  quote = F, 
-  sep = delim)
+	x = summaryList$summary_ROH_mean_chr, 
+	file = summary_ROH_mean_chr_Filename, 
+	quote = F, 
+	row.names = FALSE,
+	sep = delim)
 
 write.table(
-  x = summaryList$summary_ROH_mean_class, 
-  file = summary_ROH_mean_class_Filename, 
-  quote = F, 
-  sep = delim)
-  
+	x = summaryList$summary_ROH_mean_class, 
+	file = summary_ROH_mean_class_Filename, 
+	quote = F, 
+	row.names = FALSE,
+	sep = delim)
+	
 write.table(
-  x = summaryList$result_Froh_genome_wide, 
-  file = result_Froh_genome_wide_Filename, 
-  quote = F, 
-  sep = delim)
+	x = summaryList$result_Froh_genome_wide, 
+	file = result_Froh_genome_wide_Filename, 
+	quote = F, 
+	row.names = FALSE,
+	sep = delim)
 
 write.table(
-  x = summaryList$result_Froh_chromosome_wide, 
-  file = result_Froh_chromosome_wide_Filename, 
-  quote = F, 
-  sep = delim)
-  
+	x = summaryList$result_Froh_chromosome_wide, 
+	file = result_Froh_chromosome_wide_Filename, 
+	quote = F, 
+	row.names = FALSE,
+	sep = delim)
+	
 write.table(
-  x = summaryList$result_Froh_class, 
-  file = result_Froh_class_Filename, 
-  quote = F, 
-  sep = delim)
-  
+	x = summaryList$result_Froh_class, 
+	file = result_Froh_class_Filename, 
+	quote = F, 
+	row.names = FALSE,
+	sep = delim)
+	
 write.table(
-  x = summaryList$SNPinRun, 
-  file = SNPinRun_Filename, 
-  quote = F, 
-  sep = delim)
+	x = summaryList$SNPinRun, 
+	file = SNPinRun_Filename, 
+	quote = F, 
+	row.names = FALSE,
+	sep = delim)
 
 #################################################################
 #
@@ -153,16 +163,17 @@ for (chr in 1:maxChr){
 
 topRunsFilename <- paste0(outDirROHom , prjName,".topRunsROHom.csv") 
 topRuns <- tableRuns(
-  runs = consecutiveRuns, 
-  genotypeFile = genotypeFilePath, 
-  mapFile = mapFilePath,
-  # Set a lower threshold if "Error in `row.names<-.data.frame`(`*tmp*`, value = value) : invalid 'row.names' length". Defaults to 0.5
-  threshold = topRunsThreshold)
+	runs = consecutiveRuns, 
+	genotypeFile = genotypeFilePath, 
+	mapFile = mapFilePath,
+	# Set a lower threshold if "Error in `row.names<-.data.frame`(`*tmp*`, value = value) : invalid 'row.names' length". Defaults to 0.5
+	threshold = topRunsThreshold)
 write.table(
-  x = topRuns, 
-  file = topRunsFilename, 
-  quote = F, 
-  sep = delim)
+	x = topRuns, 
+	file = topRunsFilename, 
+	quote = F, 
+	row.names = FALSE,
+	sep = delim)
 
 #################################################################
 #
@@ -174,17 +185,18 @@ write.table(
 
 runsFilename <- paste0(outDirROHom , prjName,".consecutiveROHom.csv") 
 write.table(
-  x = consecutiveRuns, 
-  file = runsFilename, 
-  quote = F, 
-  sep = delim)
+	x = consecutiveRuns, 
+	file = runsFilename, 
+	quote = F, 
+	row.names = FALSE,
+	sep = delim)
 
 imgFilename <- paste0(outDirROHom , prjName, ".manhattanRuns_ROHom.png")
 png(imgFilename, imgXSize, imgYSize, pointsize = snpPointSize)
 plot_manhattanRuns(
-  runs = consecutiveRuns,
-  genotypeFile = genotypeFilePath, 
-  mapFile = mapFilePath)
+	runs = consecutiveRuns,
+	genotypeFile = genotypeFilePath, 
+	mapFile = mapFilePath)
 dev.off()
 
 
@@ -195,19 +207,19 @@ dev.off()
 #################################################################
 
 plotIC <- function(style) {
-  imgFilename <- paste0(outDirROHom , prjName, "." , style , ".InbreedingChr_ROHom.png")
-  png(imgFilename, imgXSize, imgYSize, pointsize = snpPointSize)
-  plot_InbreedingChr(
-    runs = consecutiveRuns, 
-    mapFile = mapFilePath, 
-    style = style)
-  dev.off()
+	imgFilename <- paste0(outDirROHom , prjName, "." , style , ".InbreedingChr_ROHom.png")
+	png(imgFilename, imgXSize, imgYSize, pointsize = snpPointSize)
+	plot_InbreedingChr(
+	  runs = consecutiveRuns, 
+	  mapFile = mapFilePath, 
+	  style = style)
+	dev.off()
   }
 
 plotStyles <- 
-  c("ChrBarPlot",
-  "ChrBoxPlot", 
-  "FrohBoxPlot")
+	c("ChrBarPlot",
+	"ChrBoxPlot", 
+	"FrohBoxPlot")
 
 sapply(plotStyles, plotIC)
 
