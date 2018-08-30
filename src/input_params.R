@@ -12,6 +12,18 @@ outDirROHet <- "CRSAAV.ROHet.out/"
 # Log file names
 logFileROHom <- paste0(outDirROHom, "logROHom.Rout")
 logFileROHet <- paste0(outDirROHet, "logROHet.Rout")
+# Output tables file names
+summary_ROH_count_chr_Filename <- paste0(prjName, "-summary_ROH_count_chr.csv")
+summary_ROH_percentage_chr_Filename <- paste0(prjName, "-summary_ROH_percentage_chr.csv")
+summary_ROH_count_Filename <- paste0(prjName, "-summary_ROH_count.csv")
+summary_ROH_percentage_Filename <- paste0(prjName, "-summary_ROH_percentage.csv")
+summary_ROH_mean_chr_Filename <- paste0(prjName, "-summary_ROH_mean_chr.csv")
+summary_ROH_mean_class_Filename <- paste0(prjName, "-summary_ROH_mean_class.csv")
+result_Froh_genome_wide_Filename <- paste0(prjName, "-result_Froh_genome_wide.csv")
+result_Froh_chromosome_wide_Filename <- paste0(prjName, "-result_Froh_chromosome_wide.csv")
+result_Froh_class_Filename <- paste0(prjName, "-result_Froh_class.csv")
+SNPinRun_Filename <- paste0(prjName, "-SNPinRun.csv")
+
 # Input files
 genotypeFilePath <- "CRSAAV.ped"
 mapFilePath <- "CRSAAV.map"

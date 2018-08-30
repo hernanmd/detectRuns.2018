@@ -50,8 +50,6 @@ consecutiveRuns_het <- consecutiveRUNS.run(
   ROHet = TRUE,
   maxGap = 10^6,
   minLengthBps = minLengthBpsParam,
-  # Depends of density of Microarray chip
-  # 0 by default (55k or lower Chip)
   maxOppRun = maxOppRun,
   maxMissRun = maxMissRun
 )
@@ -80,7 +78,7 @@ summaryList <- summaryRuns(
 #################################################################
 
 for (chr in 1:maxChr){
-  imgFilename <- paste0(outDirROHet, "snpsInRunsROHet-chr", chr ,".png")
+  imgFilename <- paste0(outDirROHet, prjName, "snpsInRunsROHet-chr", chr ,".png")
   png(imgFilename, imgXSize, imgYSize, pointsize = snpPointSize)
   plot_SnpsInRuns(
     runs = consecutiveRuns_het[consecutiveRuns_het$chrom==chr,], 

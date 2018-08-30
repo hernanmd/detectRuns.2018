@@ -71,6 +71,67 @@ summaryList <- summaryRuns(
   genotypeFile = genotypeFilePath, 
   Class = summaryClass, 
   snpInRuns = TRUE)
+  
+# Write this in a better shape
+write.table(
+  x = summaryList$summary_ROH_count_chr, 
+  file = summary_ROH_count_chr_Filename, 
+  quote = F, 
+  sep = delim) 
+ 
+write.table(
+  x = summaryList$summary_ROH_count, 
+  file = summary_ROH_count_Filename, 
+  quote = F, 
+  sep = delim)
+  
+write.table(
+  x = summaryList$summary_ROH_percentage_chr, 
+  file = summary_ROH_percentage_chr_Filename, 
+  quote = F, 
+  sep = delim)
+  
+write.table(
+  x = summaryList$summary_ROH_percentage, 
+  file = summary_ROH_percentage_Filename, 
+  quote = F, 
+  sep = delim)
+
+write.table(
+  x = summaryList$summary_ROH_mean_chr, 
+  file = summary_ROH_mean_chr_Filename, 
+  quote = F, 
+  sep = delim)
+
+write.table(
+  x = summaryList$summary_ROH_mean_class, 
+  file = summary_ROH_mean_class_Filename, 
+  quote = F, 
+  sep = delim)
+  
+write.table(
+  x = summaryList$result_Froh_genome_wide, 
+  file = result_Froh_genome_wide_Filename, 
+  quote = F, 
+  sep = delim)
+
+write.table(
+  x = summaryList$result_Froh_chromosome_wide, 
+  file = result_Froh_chromosome_wide_Filename, 
+  quote = F, 
+  sep = delim)
+  
+write.table(
+  x = summaryList$result_Froh_class, 
+  file = result_Froh_class_Filename, 
+  quote = F, 
+  sep = delim)
+  
+write.table(
+  x = summaryList$SNPinRun, 
+  file = SNPinRun_Filename, 
+  quote = F, 
+  sep = delim)
 
 #################################################################
 #
