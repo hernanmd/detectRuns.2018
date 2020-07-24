@@ -8,9 +8,8 @@ ROH Detection Workflow with detectRUNS R package
 
 # Installation
 
-  - Download and install [GitBash](http://www.techoism.com/how-to-install-git-bash-on-windows/)
-    - (Optional) [PLINK](https://www.youtube.com/watch?v=I62fp9HB0kg&feature=youtu.be)
-  - Open a GitBash console.
+  - [PLINK](https://www.youtube.com/watch?v=I62fp9HB0kg&feature=youtu.be)
+  - Open a GitBash or Terminal console.
   - cd to your working directory (example: my_working_dir): ```cd /c/Users/MyUsername/Documents/my_working_dir```
   - ```git clone https://github.com/hernanmd/detectRuns.2018.git; cd detectRuns.2018/src```
   - Put your .PED/.MAP or multiple .PED/.MAP files into the src directory
